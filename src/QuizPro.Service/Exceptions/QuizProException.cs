@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace QuizPro.Service.Exceptions;
 
-namespace QuizPro.Service.Exceptions
+public class QuizProException : Exception
 {
-    internal class QuizProException
+    public int StatusCode { get; set; }
+    public QuizProException(int code, string message) : base(message)
     {
+        StatusCode = code;
     }
 }
